@@ -1,8 +1,8 @@
 
 
 struct node {
-	char a;
+	char ch;
 	struct node *next;
 };
 
-int load(node root,char dict[]);
+int load(struct node root,char dict[]);
