@@ -41,3 +41,27 @@ int load(struct node trie[],char dict[]){
 	fclose(fp);
 	return 0;
 }
+
+int check(struct node trie[],char string[],size_t size){
+	struct node *cNodes = trie;
+	int found = 0;
+	for (int x=0;x<size-1;x++){
+		found = 0;
+		for (int i=0;i<ALPHABET_LENGTH+1;i++){
+			if (cNodes->childrens[i] == NULL){
+				printf("%d\n",i);
+				break;
+			}
+			if (cNodes->childrens[i]->ch == string[x]){
+				found = 1;
+				printf("Found %c\n",string[x]);
+				cNodes = cNodes->childrens[i];
+				break;
+			}
+		}
+		if (!found){
+			return 0;
+		}
+	}
+	return 1;
+}
