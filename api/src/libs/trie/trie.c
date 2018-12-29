@@ -26,6 +26,7 @@ int load(struct node trie[],char dict[]){
 				}
 				if (cNodes->childrens[i]->ch == ch){
 					found = 1;
+					cNodes = cNodes->childrens[i];
 					break;
 				}
 			}
@@ -34,7 +35,6 @@ int load(struct node trie[],char dict[]){
 				cNodes->childrens[i]->ch = ch;
 				last_nodes_comp_word = &(cNodes->childrens[i]->comp_word);
 				cNodes = cNodes->childrens[i];
-				printf("<%c>Not found!\n",ch);
 			}
 		}
 	}
