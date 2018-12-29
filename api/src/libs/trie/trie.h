@@ -9,3 +9,4 @@ struct node {
 };
 
 int load(struct node trie[],char dict[]);
+int check(struct node trie[],char string[],size_t size);
