@@ -4,8 +4,13 @@
 
 
 int main(void){
-	char dict[] = "test_dict.txt";
-	struct node root = {.comp_word=0};
-	load(&root,dict);
+	char dict[] = "dict/large";
+	struct node trie = {.comp_word=0};
+	load(&trie,dict);
+	char str[] = "dog";
+	size_t sz = sizeof(str)/sizeof(str[0]);
+	if (check(&trie,str,sz)){
+		printf("'dog' found in trie\n");
+	}
 	return 0;
 }
