@@ -1,8 +1,11 @@
 
+#define ALPHABET_LENGTH 26
+
 
 struct node {
 	char ch;
-	struct node *next;
+	int comp_word; // complete word
+	struct node *childrens[ALPHABET_LENGTH + 1]; // +1 is for apostrophes
 };
 
-int load(struct node root,char dict[]);
+int load(struct node trie[],char dict[]);
